@@ -1,0 +1,45 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    coderay (1.1.1)
+    dotenv (2.1.1)
+    gli (2.13.4)
+    harvested (3.1.1)
+      hashie
+      httparty
+      json
+    hashie (3.4.6)
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
+    json (1.8.3)
+    method_source (0.8.2)
+    minitest (5.8.4)
+    multi_xml (0.5.5)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    rake (10.5.0)
+    ruby-progressbar (1.8.1)
+    slop (3.6.0)
+    table_print (1.5.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.11)
+  dotenv
+  gli (~> 2.13, >= 2.13.4)
+  harvested
+  minitest (~> 5.0)
+  pry
+  rake (~> 10.0)
+  ruby-progressbar
+  table_print
+
+RUBY VERSION
+   ruby 2.3.2p217
+
+BUNDLED WITH
+   1.13.6

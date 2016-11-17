@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require 'gli'
+
+module HarvestReports
+  require_relative '../lib/harvest_reports'
+
+  exit run(ARGV)
+end
