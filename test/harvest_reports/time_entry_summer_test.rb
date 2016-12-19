@@ -19,8 +19,8 @@ class TimeEntrySummerTest < Minitest::Test
 
   def entries
     [
-      TimeEntry.new(hours: 1.00),
-      TimeEntry.new(hours: 0.2401)
+      TimeEntry.new(nil, 1.00, nil, nil, '2016-01-01'),
+      TimeEntry.new(nil, 0.2401, nil, nil, '2016-01-01')
     ]
   end
 end
