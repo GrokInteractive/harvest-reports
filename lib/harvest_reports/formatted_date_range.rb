@@ -48,7 +48,7 @@ class FormattedDateRange
 
   def self.extract_year(string)
     begin
-      Integer(string.split('-').fetch(0, '').chomp).tap do |integer|
+      Integer(string.split('-').fetch(0, '').chomp, 10).tap do |integer|
         raise ArgumentError unless integer >= 2013
       end
     rescue ArgumentError
@@ -58,7 +58,7 @@ class FormattedDateRange
 
   def self.extract_month(string)
    begin
-      Integer(string.split('-').fetch(1, '').chomp).tap do |integer|
+      Integer(string.split('-').fetch(1, '').chomp, 10).tap do |integer|
         raise ArgumentError unless /0[1-9]|1[0-2]/.match(string)
       end
     rescue ArgumentError
@@ -68,7 +68,7 @@ class FormattedDateRange
 
   def self.extract_day(string)
    begin
-      Integer(string.split('-').fetch(2, '').chomp).tap do |integer|
+      Integer(string.split('-').fetch(2, '').chomp, 10).tap do |integer|
         raise ArgumentError unless /0[1-9]|1[0-9]|2[0-9]|3[0-1]/.match(string)
       end
     rescue ArgumentError

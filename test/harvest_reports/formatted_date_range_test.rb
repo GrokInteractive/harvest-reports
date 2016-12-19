@@ -60,6 +60,14 @@ class FormattedDateRangeTest < Minitest::Test
     assert_equal('20160131', result)
   end
 
+  def test_month_resolves_for_decimal_months
+    subject = FormattedDateRange.month_from_string('2016-09')
+
+    result = subject.start_date
+
+    assert_equal('20160901', result)
+  end
+
   def test_to_date
     subject = FormattedDateRange.to_date
 
