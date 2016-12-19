@@ -59,4 +59,16 @@ class FormattedDateRangeTest < Minitest::Test
 
     assert_equal('20160131', result)
   end
+
+  def test_to_date
+    subject = FormattedDateRange.to_date
+
+    result = subject.start_date
+
+    assert_equal('20130101', result)
+
+    result = subject.end_date
+
+    assert_equal(Date.today.strftime('%Y%m%d'), result)
+  end
 end

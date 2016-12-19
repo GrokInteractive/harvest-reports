@@ -29,6 +29,10 @@ class FormattedDateRange
     new(start_date, end_date)
   end
 
+  def self.to_date
+    new(Date.new(2013, 01, 01), Date.today)
+  end
+
   def self.month_from_string(string)
     string = String(string)
 
