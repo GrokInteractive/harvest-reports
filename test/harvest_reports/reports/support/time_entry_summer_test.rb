@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class TimeEntrySummerTest < Minitest::Test
+class HarvestReports::Reports::Support::TimeEntrySummerTest < Minitest::Test
   def test_sum_rounded_entries
-    subject = TimeEntrySummer.new
+    subject = HarvestReports::Reports::Support::TimeEntrySummer.new
 
     result = subject.sum_rounded_entries(entries)
 
@@ -10,7 +10,7 @@ class TimeEntrySummerTest < Minitest::Test
   end
 
   def test_sum_rounded_entries
-    subject = TimeEntrySummer.new
+    subject = HarvestReports::Reports::Support::TimeEntrySummer.new
 
     result = subject.sum_entries(entries)
 
