@@ -1,4 +1,3 @@
-require 'pry'
 require 'harvested'
 require 'ruby-progressbar'
 require 'table_print'

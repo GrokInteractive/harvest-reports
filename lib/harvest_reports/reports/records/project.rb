@@ -1,6 +1,6 @@
 module HarvestReports::Reports::Records
   class Project
-    def initialize(project, billable_entries, nonbillable_entries, summer: TimeEntrySummer.new)
+    def initialize(project, billable_entries, nonbillable_entries, summer: HarvestReports::Reports::Support::TimeEntrySummer.new)
       @project = project
       @billable_entries = billable_entries || []
       @nonbillable_entries = nonbillable_entries || []

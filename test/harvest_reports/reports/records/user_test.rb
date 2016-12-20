@@ -37,7 +37,8 @@ class HarvestReports::Reports::Records::UserTest < Minitest::Test
   end
 
   def expected_hours
-    HarvestReports::Reports::Support::ExpectedHours.new(FormattedDateRange.new(Date.parse('2016-01-01'), Date.parse('2016-02-01')))
+    range = HarvestReports::Reports::Support::FormattedDateRange.new(Date.parse('2016-01-01'), Date.parse('2016-02-01'))
+    HarvestReports::Reports::Support::ExpectedHours.new(range)
   end
 end
 

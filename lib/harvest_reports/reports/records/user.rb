@@ -1,6 +1,6 @@
 module HarvestReports::Reports::Records
   class User
-    def initialize(user, billable_entries, nonbillable_entries, expected_hours, summer: TimeEntrySummer.new)
+    def initialize(user, billable_entries, nonbillable_entries, expected_hours, summer: HarvestReports::Reports::Support::TimeEntrySummer.new)
       @user = user
       @billable_entries = billable_entries || []
       @nonbillable_entries = nonbillable_entries || []

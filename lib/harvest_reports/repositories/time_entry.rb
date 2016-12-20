@@ -17,7 +17,7 @@ class TimeEntry
     User.find(user_id)
   end
 
-  def rounded_hours(rounder: HarvestRounder.new)
+  def rounded_hours(rounder: HarvestReports::Reports::Support::HarvestRounder.new)
     rounder.round(hours)
   end
 
