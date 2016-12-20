@@ -10,6 +10,10 @@ class User
     @last_name = last_name
   end
 
+  def ==(object)
+    object.class == self.class && object.id == id
+  end
+
   def self.filename
     @@filename
   end

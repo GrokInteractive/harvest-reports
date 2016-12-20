@@ -21,4 +21,20 @@ class UserTest < Minitest::Test
 
     assert_equal('Alexander', result)
   end
+
+  def test_equal
+    subject = User.find(1321659)
+
+    result = subject == User.find(1321659)
+
+    assert_equal(true, result)
+  end
+
+  def test_not_equal
+    subject = User.find(1321659)
+
+    result = subject == User.from_json({})
+
+    assert_equal(false, result)
+  end
 end
