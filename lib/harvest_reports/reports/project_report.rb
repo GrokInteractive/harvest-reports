@@ -3,7 +3,7 @@ module HarvestReports::Reports
     def report(date_range: FormattedDateRange.new(Date.today), sort:, renderer:)
       billable_entries = TimeEntry.billable_entries.select { |entry| date_range.in_range?(entry.date) }.group_by { |entry| entry.project_id }
       nonbillable_entries = TimeEntry.nonbillable_entries.select { |entry| date_range.in_range?(entry.date) }.group_by { |entry| entry.project_id }
-      expected_hours = ExpectedHours.new(date_range)
+      expected_hours = HarvestReports::Reports::Support::ExpectedHours.new(date_range)
 
       projects = projects_from(billable_entries, nonbillable_entries)
 

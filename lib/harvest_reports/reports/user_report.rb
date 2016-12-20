@@ -6,7 +6,7 @@ module HarvestReports::Reports
 
       users = users_from(billable_entries, nonbillable_entries)
 
-      expected_hours = ExpectedHours.new(date_range)
+      expected_hours = HarvestReports::Reports::Support::ExpectedHours.new(date_range)
 
       users.map! do |user|
         HarvestReports::Reports::Records::User.new(user, billable_entries[user.id], nonbillable_entries[user.id], expected_hours).to_h
