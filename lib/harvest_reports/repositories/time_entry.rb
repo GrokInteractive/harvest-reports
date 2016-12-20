@@ -9,6 +9,16 @@ class TimeEntry
     @date = Date.parse(date)
   end
 
+  def to_h
+    {
+      id: id,
+      hours: hours,
+      user_id: user_id,
+      project_id: project_id,
+      date: date
+    }
+  end
+
   def project
     Project.find(project_id)
   end
@@ -26,13 +36,7 @@ class TimeEntry
   end
 
   def self.from_json(json)
-    TimeEntry.new(json['id'], json['hours'], json['user_id'], json['project_id'], json['spent_at'])
-  end
-
-  def self.all_entries
-    JSON.load(File.read('./download/all_entries.json')).map do |json|
-      TimeEntry.from_json(json)
-    end
+    TimeEntry.new(json['id'], json['hours'], json['user_id'], json['project_id'], json['date'])
   end
 
   def self.billable_entries

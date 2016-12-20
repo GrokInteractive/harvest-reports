@@ -20,6 +20,21 @@ class TimeEntryTest < Minitest::Test
     assert_equal(Date.parse('2016-01-01'), result)
   end
 
+  def test_to_h
+    subject = TimeEntry.from_json({'id' => 42, 'hours' => 11.2, 'user_id' => 22, 'project_id' => 33, 'spent_at' => '2016-01-01'})
+
+    result = subject.to_h
+    expected_result = {
+      id: 42,
+      hours: 11.2,
+      user_id: 22,
+      project_id: 33,
+      date: Date.parse('2016-01-01')
+    }
+    assert_equal(expected_result, result)
+  end
+
+
   def test_parsing
     result = TimeEntry.parse(object)
 
