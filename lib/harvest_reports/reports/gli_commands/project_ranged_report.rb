@@ -17,7 +17,7 @@ module HarvestReports
       c.switch :csv, default_value: false, desc: 'Print the results as a CSV'
       c.flag [:s, :sort], default_value: 'Name'
 
-      date_range = FormattedDateRange.from_strings(arguments[0], arguments[1])
+      date_range = HarvestReports::Reports::Support::FormattedDateRange.from_strings(arguments[0], arguments[1])
       sort = HarvestReports::Reports::Support::Sort.new(options[:sort])
       renderer = HarvestReports::Reports::Renderers.locate(options[:csv] ? 'csv' : 'table')
 
