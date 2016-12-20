@@ -13,9 +13,10 @@ module HarvestReports
   arg 'yyyy-mm-dd'
 
   command 'project-ranged-report' do |c|
+    c.switch :csv, default_value: false, desc: 'Print the results as a CSV'
+    c.flag [:s, :sort], default_value: 'Name'
+
     c.action do |global_options, options, arguments|
-      c.switch :csv, default_value: false, desc: 'Print the results as a CSV'
-      c.flag [:s, :sort], default_value: 'Name'
 
       date_range = HarvestReports::Reports::Support::FormattedDateRange.from_strings(arguments[0], arguments[1])
       sort = HarvestReports::Reports::Support::Sort.new(options[:sort])
