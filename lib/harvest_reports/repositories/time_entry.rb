@@ -1,4 +1,4 @@
-class TimeEntry < OpenStruct
+class TimeEntry
   attr_reader :id, :hours, :user_id, :project_id, :date
 
   def initialize(id, hours, user_id, project_id, date)
